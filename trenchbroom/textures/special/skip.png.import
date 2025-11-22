@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4vx3gjn7atc5"
-path="res://.godot/imported/clip.png-95ac8d8f95e41b7d28fb873cf6edfaf9.ctex"
+uid="uid://ci7wmy43tqira"
+path="res://.godot/imported/skip.png-c459aef359e4c030386b839e1750df22.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://trenchbroom/textures/clip.png"
-dest_files=["res://.godot/imported/clip.png-95ac8d8f95e41b7d28fb873cf6edfaf9.ctex"]
+source_file="res://trenchbroom/textures/special/skip.png"
+dest_files=["res://.godot/imported/skip.png-c459aef359e4c030386b839e1750df22.ctex"]
 
 [params]
 
