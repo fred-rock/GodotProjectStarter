@@ -17,3 +17,7 @@ COGITO is made by [Philip Drobar](https://www.philipdrobar.com) with help from [
 
 ## Func Godot and Trenchbroom
 (Add steps to configure Func Godot and Trenchbroom)
+
+## Credits
+Sounds effects by Zapsplat
+https://www.zapsplat.com/music/axe-single-chopping-of-wood-in-forest-with-echo-from-trees-6/
