@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cpp1uf0gb8i7o"]
+
+[ext_resource type="Texture2D" uid="uid://0s8x46v2y56y" path="res://trenchbroom/textures/fantasy/Wood_22-128x128.png" id="1_xniwk"]
+
+[resource]
+albedo_texture = ExtResource("1_xniwk")
+metallic_specular = 0.0
+texture_filter = 2
