@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf5isot2hv2v0"]
+
+[ext_resource type="PackedScene" uid="uid://cjinu41mhympb" path="res://assets/models/nature/tree_branch.glb" id="1_10q5d"]
+[ext_resource type="Script" uid="uid://dmeh01c5ccjqc" path="res://addons/cogito/CogitoObjects/cogito_object.gd" id="1_ljp6s"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fialr"]
+
+[node name="TreeBranch" type="RigidBody3D"]
+mass = 25.0
+script = ExtResource("1_ljp6s")
+cogito_name = "TreeBranch"
+
+[node name="tree_branch2" parent="." instance=ExtResource("1_10q5d")]
+transform = Transform3D(-0.0112394, -0.999861, 0.0123566, -0.677356, -0.00147731, -0.735654, 0.735569, -0.0166381, -0.677245, 1.1314, 0.0344922, -0.00268555)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_fialr")
