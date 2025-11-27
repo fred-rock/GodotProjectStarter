@@ -35,7 +35,8 @@ Create a map
 4. Save the map in the Godot project trenchbroom folder (i.e. C:\Users\adamp\Projects\Godot\GodotProjectStarter\trenchbroom\maps)
 5. Add a FuncGodotMap to a 3D scene.
 6. Drag godotprojectstarter_fgd.tres into Map Settings, and add the path to the Trenchbroom map (i.e. res://trenchbroom/maps/test.map) to Local Map File
-7. Click Build Map
+7. Open Map Settings and add res://trenchbroom/textures to Base Texture Dir
+8. Click Build Map
 
 ## Credits
 Sounds effects by Zapsplat
