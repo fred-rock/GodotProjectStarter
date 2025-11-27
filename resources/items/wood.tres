@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="InventoryItemPD" load_steps=2 format=3 uid="uid://cavomd66otpnt"]
+
+[ext_resource type="Script" uid="uid://dog0pawpwd55d" path="res://addons/cogito/InventoryPD/CustomResources/InventoryItemPD.gd" id="1_nmid8"]
+
+[resource]
+script = ExtResource("1_nmid8")
+name = "Wood"
+description = "Harvested from a tree"
+is_stackable = true
+is_droppable = true
+is_unique = false
+stack_size = 5
+drop_scene = null
+item_drop_size = 0.5
+hint_text_on_use = ""
+item_size = Vector2(1, 1)
+can_auto_slot = false
+slot_number = -1
+metadata/_custom_type_script = "uid://dog0pawpwd55d"

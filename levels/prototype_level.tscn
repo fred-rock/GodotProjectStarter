@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=4 uid="uid://bdniqpo0gs3h8"]
+[gd_scene load_steps=18 format=4 uid="uid://bdniqpo0gs3h8"]
 
+[ext_resource type="Script" uid="uid://c2kkj7vhsd1oi" path="res://addons/cogito/SceneManagement/cogito_scene.gd" id="1_0bul0"]
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_6lfjr"]
 [ext_resource type="Resource" uid="uid://cmt8gql2bc8a7" path="res://trenchbroom/godotprojectstarter_settings.tres" id="2_qd0o6"]
 [ext_resource type="Material" uid="uid://dd5l3auqtngil" path="res://trenchbroom/textures/prototype/proto_03.tres" id="3_pvbb1"]
@@ -61,6 +62,7 @@ background_color = Color(0.529067, 0.529067, 0.529067, 1)
 sky = SubResource("Sky_ssd6y")
 
 [node name="prototype_level" type="Node3D"]
+script = ExtResource("1_0bul0")
 
 [node name="FuncGodotMap" type="Node3D" parent="."]
 script = ExtResource("1_6lfjr")
@@ -89,7 +91,7 @@ shape = SubResource("ConvexPolygonShape3D_r7pgf")
 [node name="entity_0_brush_4_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn"]
 shape = SubResource("ConvexPolygonShape3D_m3w54")
 
-[node name="CogitoPlayer" parent="." instance=ExtResource("4_pvbb1")]
+[node name="my_player" parent="." instance=ExtResource("4_pvbb1")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ssd6y")
@@ -105,3 +107,44 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.55966)
 
 [node name="DestructableTree" parent="." instance=ExtResource("8_rl8gb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4833, 0, -0.456816)
+
+[node name="DestructableTree2" parent="." instance=ExtResource("8_rl8gb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4833, 0, 8.51229)
+
+[node name="DestructableTree3" parent="." instance=ExtResource("8_rl8gb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4833, 0, 6.60415)
+
+[node name="DestructableTree4" parent="." instance=ExtResource("8_rl8gb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4833, 0, 4.23811)
+
+[node name="DestructableTree5" parent="." instance=ExtResource("8_rl8gb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4833, 0, 1.99484)
+
+[node name="DestructableTree6" parent="." instance=ExtResource("8_rl8gb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4833, 0, -2.83657)
+
+[node name="DestructableTree7" parent="." instance=ExtResource("8_rl8gb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4833, 0, -5.40557)
+
+[node name="DestructableTree8" parent="." instance=ExtResource("8_rl8gb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04131, 0, -1.58314)
+
+[node name="DestructableTree9" parent="." instance=ExtResource("8_rl8gb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04131, 0, 7.38597)
+
+[node name="DestructableTree10" parent="." instance=ExtResource("8_rl8gb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04131, 0, 5.47783)
+
+[node name="DestructableTree11" parent="." instance=ExtResource("8_rl8gb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04131, 0, 3.11179)
+
+[node name="DestructableTree12" parent="." instance=ExtResource("8_rl8gb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04131, 0, 0.868519)
+
+[node name="DestructableTree13" parent="." instance=ExtResource("8_rl8gb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04131, 0, -3.96289)
+
+[node name="DestructableTree14" parent="." instance=ExtResource("8_rl8gb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04131, 0, -6.53189)
+
+[editable path="my_player"]

@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://dgffkawmd1wg1"
+path="res://.godot/imported/central_woods.map-b0874b729475af392bc315a93eb7ba76.tres"
+
+[deps]
+
+source_file="res://trenchbroom/maps/central_woods.map"
+dest_files=["res://.godot/imported/central_woods.map-b0874b729475af392bc315a93eb7ba76.tres"]
+
+[params]
+
