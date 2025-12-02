@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0s8x46v2y56y"
-path.s3tc="res://.godot/imported/Wood_22-128x128.png-3fca380e740eee8e5362babdaa722050.s3tc.ctex"
+uid="uid://bllqb2ug4hjwo"
+path.s3tc="res://.godot/imported/Gem_12-128x128.png-44330ba41928aac85aafdb210022d6b7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://trenchbroom/textures/fantasy/Wood_22-128x128.png"
-dest_files=["res://.godot/imported/Wood_22-128x128.png-3fca380e740eee8e5362babdaa722050.s3tc.ctex"]
+source_file="res://trenchbroom/textures/128/fantasy/Gem_12-128x128.png"
+dest_files=["res://.godot/imported/Gem_12-128x128.png-44330ba41928aac85aafdb210022d6b7.s3tc.ctex"]
 
 [params]
 

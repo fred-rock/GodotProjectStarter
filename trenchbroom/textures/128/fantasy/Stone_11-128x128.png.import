@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://numx1lbej13p"
-path.s3tc="res://.godot/imported/Grass_12-128x128.png-58047aae6fa1923612a85fde4eddebef.s3tc.ctex"
+uid="uid://dwolsb0xpdqij"
+path.s3tc="res://.godot/imported/Stone_11-128x128.png-aba00d3c775039add74348e03f8dc7f2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://trenchbroom/textures/fantasy/Grass_12-128x128.png"
-dest_files=["res://.godot/imported/Grass_12-128x128.png-58047aae6fa1923612a85fde4eddebef.s3tc.ctex"]
+source_file="res://trenchbroom/textures/128/fantasy/Stone_11-128x128.png"
+dest_files=["res://.godot/imported/Stone_11-128x128.png-aba00d3c775039add74348e03f8dc7f2.s3tc.ctex"]
 
 [params]
 

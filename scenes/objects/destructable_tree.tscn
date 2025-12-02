@@ -8,9 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://06bda3phukre" path="res://scenes/objects/destructable_tree_trunk.tscn" id="6_pn7b4"]
 [ext_resource type="PackedScene" uid="uid://gar66bkknxqy" path="res://assets/models/nature/tree_6.glb" id="8_0cjnf"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_c0vgj"]
-height = 3.5
-radius = 0.240723
+[sub_resource type="BoxShape3D" id="BoxShape3D_pn7b4"]
+size = Vector3(0.524902, 1.3096, 0.454102)
 
 [node name="DestructableTree" type="RigidBody3D"]
 mass = 50.0
@@ -19,8 +18,8 @@ script = ExtResource("1_c0vgj")
 cogito_name = "DestuctableTree"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
-shape = SubResource("CylinderShape3D_c0vgj")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00317383, 0.666702, -0.000488281)
+shape = SubResource("BoxShape3D_pn7b4")
 
 [node name="HealthAttribute" parent="." instance=ExtResource("3_fype1")]
 sound_on_hit = ExtResource("4_5ippr")
