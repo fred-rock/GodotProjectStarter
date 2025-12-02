@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDModelPointClass" load_steps=3 format=3 uid="uid://d1mfxdbf1yuxa"]
+
+[ext_resource type="Script" uid="uid://ldfqjtq0br35" path="res://addons/func_godot/src/fgd/func_godot_fgd_model_point_class.gd" id="1_3fmmn"]
+[ext_resource type="PackedScene" uid="uid://dopt6hi2ugpkq" path="res://scenes/objects/destructable_tree.tscn" id="1_xe5ht"]
+
+[resource]
+script = ExtResource("1_3fmmn")
+target_map_editor = 1
+models_sub_folder = ""
+scale_expression = ""
+generate_size_property = true
+rotation_offset = Vector3(0, 0, 0)
+scene_file = ExtResource("1_xe5ht")
+apply_rotation_on_map_build = true
+apply_scale_on_map_build = true
+classname = "destructable_tree"
+description = "Tree which can be chopped down."
+func_godot_internal = false
+base_classes = Array[Resource]([])
+class_properties = {}
+class_property_descriptions = {}
+auto_apply_to_matching_node_properties = false
+meta_properties = {
+"color": Color(0.8, 0.8, 0.8, 1),
+"model": "\"trenchbroom/models/destructable_tree.glb\"",
+"size": AABB(-56, -53, 5, 50, 49, 199)
+}
+node_class = ""
+name_property = ""
+metadata/_custom_type_script = "uid://ldfqjtq0br35"
