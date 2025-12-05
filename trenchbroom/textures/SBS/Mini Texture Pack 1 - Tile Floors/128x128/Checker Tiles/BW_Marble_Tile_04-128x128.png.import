@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://4ahx5vk4od1u"
+path="res://.godot/imported/BW_Marble_Tile_04-128x128.png-1459b3d0e7926fae889068caab0dd6e1.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://trenchbroom/textures/SBS/Mini Texture Pack 1 - Tile Floors/128x128/Checker Tiles/BW_Marble_Tile_04-128x128.png"
+dest_files=["res://.godot/imported/BW_Marble_Tile_04-128x128.png-1459b3d0e7926fae889068caab0dd6e1.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

@@ -1,13 +1,27 @@
-[gd_scene load_steps=18 format=4 uid="uid://bdniqpo0gs3h8"]
+[gd_scene load_steps=20 format=4 uid="uid://bdniqpo0gs3h8"]
 
 [ext_resource type="Script" uid="uid://c2kkj7vhsd1oi" path="res://addons/cogito/SceneManagement/cogito_scene.gd" id="1_0bul0"]
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_6lfjr"]
 [ext_resource type="Resource" uid="uid://cmt8gql2bc8a7" path="res://trenchbroom/godotprojectstarter_settings.tres" id="2_qd0o6"]
-[ext_resource type="Material" uid="uid://dd5l3auqtngil" path="res://trenchbroom/textures/prototype/proto_03.tres" id="3_pvbb1"]
-[ext_resource type="Material" uid="uid://be5qbxwql6hfw" path="res://trenchbroom/textures/prototype/proto_02.tres" id="4_0bul0"]
 [ext_resource type="PackedScene" uid="uid://kicjwmh02uwf" path="res://addons/cogito/PackedScenes/cogito_player.tscn" id="4_pvbb1"]
 [ext_resource type="PackedScene" uid="uid://dopt6hi2ugpkq" path="res://scenes/objects/destructable_tree.tscn" id="8_rl8gb"]
 [ext_resource type="PackedScene" uid="uid://cgce75ts2twkp" path="res://addons/cogito/PackedScenes/Pickups/pickup_pickaxe.tscn" id="10_3sjje"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i5e4g"]
+load_path = "res://.godot/imported/proto_03.png-a6ece3ba2200ceae53d86e936c016713.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pvbb1"]
+albedo_texture = SubResource("CompressedTexture2D_i5e4g")
+metallic_specular = 0.0
+texture_filter = 2
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0bul0"]
+load_path = "res://.godot/imported/proto_02.png-db55820d5501f5e9967bf38a4b6321f5.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rl8gb"]
+albedo_texture = SubResource("CompressedTexture2D_0bul0")
+metallic_specular = 0.0
+texture_filter = 2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_rl8gb"]
 _surfaces = [{
@@ -16,7 +30,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
-"material": ExtResource("3_pvbb1"),
+"material": SubResource("StandardMaterial3D_pvbb1"),
 "name": "prototype/proto_03",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -28,7 +42,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 144,
 "index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsAHAAdAB4AHAAeAB8AIAAhACIAIAAiACMAJAAlACYAJAAmACcAKAApACoAKAAqACsALAAtAC4ALAAuAC8AMAAxADIAMAAyADMANAA1ADYANAA2ADcAOAA5ADoAOAA6ADsAPAA9AD4APAA+AD8AQABBAEIAQABCAEMARABFAEYARABGAEcASABJAEoASABKAEsATABNAE4ATABOAE8AUABRAFIAUABSAFMAVABVAFYAVABWAFcAWABZAFoAWABaAFsAXABdAF4AXABeAF8A"),
-"material": ExtResource("4_0bul0"),
+"material": SubResource("StandardMaterial3D_rl8gb"),
 "name": "prototype/proto_02",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),

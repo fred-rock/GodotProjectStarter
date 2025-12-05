@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bey25vq5ix8r3"]
+
+[ext_resource type="Texture2D" uid="uid://fnb107uiimd0" path="res://trenchbroom/textures/SBS/Mini Texture Pack 3 - Liquids/128x128/Liquid_Blue_03-512x512.png" id="1_pcuir"]
+
+[resource]
+albedo_texture = ExtResource("1_pcuir")
+metallic_specular = 0.0
+texture_filter = 2
