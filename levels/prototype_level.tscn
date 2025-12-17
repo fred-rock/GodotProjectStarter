@@ -122,43 +122,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.55966)
 [node name="DestructableTree" parent="." instance=ExtResource("8_rl8gb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4833, 0, -0.456816)
 
-[node name="DestructableTree2" parent="." instance=ExtResource("8_rl8gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4833, 0, 8.51229)
-
-[node name="DestructableTree3" parent="." instance=ExtResource("8_rl8gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4833, 0, 6.60415)
-
-[node name="DestructableTree4" parent="." instance=ExtResource("8_rl8gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4833, 0, 4.23811)
-
-[node name="DestructableTree5" parent="." instance=ExtResource("8_rl8gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4833, 0, 1.99484)
-
-[node name="DestructableTree6" parent="." instance=ExtResource("8_rl8gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4833, 0, -2.83657)
-
-[node name="DestructableTree7" parent="." instance=ExtResource("8_rl8gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4833, 0, -5.40557)
-
-[node name="DestructableTree8" parent="." instance=ExtResource("8_rl8gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04131, 0, -1.58314)
-
-[node name="DestructableTree9" parent="." instance=ExtResource("8_rl8gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04131, 0, 7.38597)
-
-[node name="DestructableTree10" parent="." instance=ExtResource("8_rl8gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04131, 0, 5.47783)
-
-[node name="DestructableTree11" parent="." instance=ExtResource("8_rl8gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04131, 0, 3.11179)
-
-[node name="DestructableTree12" parent="." instance=ExtResource("8_rl8gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04131, 0, 0.868519)
-
-[node name="DestructableTree13" parent="." instance=ExtResource("8_rl8gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04131, 0, -3.96289)
-
-[node name="DestructableTree14" parent="." instance=ExtResource("8_rl8gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04131, 0, -6.53189)
-
 [editable path="my_player"]

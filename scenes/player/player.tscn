@@ -1,0 +1,224 @@
+[gd_scene load_steps=39 format=3 uid="uid://j7yysy6bkd4g"]
+
+[ext_resource type="Script" uid="uid://dyitnpyhwiqx7" path="res://addons/cogito/CogitoObjects/cogito_player.gd" id="1_swb31"]
+[ext_resource type="Resource" uid="uid://ll11y3yjbqt" path="res://addons/cogito/InventoryPD/Inventories/PlayerInventory_FIXED.tres" id="2_75b6e"]
+[ext_resource type="AudioStream" uid="uid://ba8gpptnnapyh" path="res://addons/cogito/Assets/Audio/Kenney/cloth2.ogg" id="3_r1ew1"]
+[ext_resource type="AudioStream" uid="uid://b7wmxwvtbpfu1" path="res://addons/cogito/Assets/Audio/537275__laughingfish78__dirt-sliding.ogg" id="4_ryqok"]
+[ext_resource type="PackedScene" uid="uid://n1doui0jpn1v" path="res://addons/cogito/InventoryPD/CustomResources/CogtoTestCurrency.tscn" id="5_7ih0v"]
+[ext_resource type="Script" uid="uid://b6l8lsrktfd4b" path="res://addons/cogito/Components/Attributes/cogito_attribute.gd" id="6_ykqeg"]
+[ext_resource type="Texture2D" uid="uid://d0so3oo1yk4kh" path="res://addons/cogito/Assets/Graphics/HintIcons/Hint_Heart.png" id="7_dcbkw"]
+[ext_resource type="PackedScene" uid="uid://dorp3auw3s65q" path="res://addons/cogito/Components/Attributes/LightMeterAttribute.tscn" id="8_jto75"]
+[ext_resource type="PackedScene" uid="uid://cetc123v5gnff" path="res://addons/cogito/Components/Attributes/SanityAttribute.tscn" id="9_w4jr0"]
+[ext_resource type="PackedScene" uid="uid://ce7bjv28uakxl" path="res://addons/cogito/Components/Attributes/StaminaAttribute.tscn" id="10_doo25"]
+[ext_resource type="PackedScene" uid="uid://cqgg1nng0vvbh" path="res://addons/cogito/Components/Attributes/HealthAttribute.tscn" id="11_wb1pd"]
+[ext_resource type="AnimationLibrary" uid="uid://cdchpsv104er2" path="res://addons/cogito/Assets/Animations/player_eyes.tres" id="12_75o7g"]
+[ext_resource type="PackedScene" uid="uid://cbd2ojah4nun6" path="res://addons/cogito/Components/interaction_raycast.tscn" id="13_tpgek"]
+[ext_resource type="Script" uid="uid://ua63m2y35w46" path="res://addons/cogito/Scripts/item_drop_shape_cast.gd" id="14_2o4ki"]
+[ext_resource type="Script" uid="uid://017wlbrnndy0" path="res://addons/cogito/Scripts/wieldables_sway.gd" id="15_0uj75"]
+[ext_resource type="AudioStream" uid="uid://up2hfhgq1qx6" path="res://addons/cogito/Assets/Audio/Kenney/Footsteps/footstep00.ogg" id="16_erwnw"]
+[ext_resource type="AudioStream" uid="uid://crj07wq4oocwi" path="res://addons/cogito/Assets/Audio/Kenney/Footsteps/footstep01.ogg" id="17_boabr"]
+[ext_resource type="AudioStream" uid="uid://dewyukd562k37" path="res://addons/cogito/Assets/Audio/Kenney/Footsteps/footstep02.ogg" id="18_bg7iw"]
+[ext_resource type="AudioStream" uid="uid://c5kfw4o57foju" path="res://addons/cogito/Assets/Audio/Kenney/Footsteps/footstep03.ogg" id="19_nysj8"]
+[ext_resource type="AudioStream" uid="uid://b4mt1tuxo2144" path="res://addons/cogito/Assets/Audio/Kenney/Footsteps/footstep04.ogg" id="20_y8b2h"]
+[ext_resource type="Script" uid="uid://b1qja1tbw5e1j" path="res://addons/cogito/DynamicFootstepSystem/Scripts/footstep_surface_detector.gd" id="21_074dc"]
+[ext_resource type="AudioStream" uid="uid://dc03jiw2a6y3j" path="res://addons/cogito/DynamicFootstepSystem/FootstepProfiles/generic_footstep_profile.tres" id="22_yraph"]
+[ext_resource type="Resource" uid="uid://ca0q2t6w08ubh" path="res://addons/cogito/DynamicFootstepSystem/FootstepMaterialLibrary/sample_footstep_material_library.tres" id="23_i7pw3"]
+[ext_resource type="PackedScene" uid="uid://dy3tudla5p2nc" path="res://addons/cogito/Components/PlayerInteractionComponent.tscn" id="24_v3rjj"]
+[ext_resource type="Script" uid="uid://egffa3q4ftpg" path="res://addons/cogito/Scripts/CogitoGUI.gd" id="25_m6iwr"]
+[ext_resource type="PackedScene" uid="uid://0c32kepv0ahx" path="res://addons/cogito/PackedScenes/Player_HUD.tscn" id="26_v2w4a"]
+[ext_resource type="PackedScene" uid="uid://dkie3md1cmsip" path="res://addons/cogito/EasyMenus/Scenes/PauseMenu.tscn" id="27_l6bt8"]
+[ext_resource type="PackedScene" uid="uid://cga0lxak2u2oq" path="res://addons/cogito/Components/AutoPickUpZone.tscn" id="28_ddyk2"]
+[ext_resource type="Script" uid="uid://dog0pawpwd55d" path="res://addons/cogito/InventoryPD/CustomResources/InventoryItemPD.gd" id="29_jkh8t"]
+[ext_resource type="Resource" uid="uid://bqhbrpnp2tt08" path="res://addons/cogito/InventoryPD/Items/Cogito_FoamBullets.tres" id="30_e4a2l"]
+[ext_resource type="Resource" uid="uid://cvupo3p844nh2" path="res://addons/cogito/InventoryPD/Items/Cogito_LaserAmmo.tres" id="31_w0o55"]
+[ext_resource type="PackedScene" uid="uid://bnlt0es031dsf" path="res://addons/cogito/Components/AutoConsumes/HealthAutoConsume.tscn" id="32_fle5a"]
+[ext_resource type="PackedScene" uid="uid://txkg0abvpsj7" path="res://addons/cogito/Components/AutoConsumes/StaminaAutoConsume.tscn" id="33_my4uh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8vem4"]
+size = Vector3(0.6, 1.7, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ut3wm"]
+size = Vector3(0.6, 0.7, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bpb0d"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_af0lu"]
+streams_count = 5
+stream_0/stream = ExtResource("16_erwnw")
+stream_1/stream = ExtResource("17_boabr")
+stream_2/stream = ExtResource("18_bg7iw")
+stream_3/stream = ExtResource("19_nysj8")
+stream_4/stream = ExtResource("20_y8b2h")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bpb0d"]
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("item_drop_shapecast") groups=["Player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+script = ExtResource("1_swb31")
+pause_menu = NodePath("GUI/Panel/AspectRatioContainer/PauseMenu")
+player_hud = NodePath("GUI/Panel/AspectRatioContainer/Player_HUD")
+item_drop_shapecast = NodePath("Body/Neck/Head/Eyes/Camera/ItemDropShapeCast")
+fall_damage = 10
+inventory_data = ExtResource("2_75b6e")
+jump_sound = ExtResource("3_r1ew1")
+slide_sound = ExtResource("4_ryqok")
+WALKING_SPEED = 3.0
+SPRINTING_SPEED = 6.0
+SLIDE_JUMP_MOD = 1.3
+CAN_BUNNYHOP = false
+HEADBOBBLE = 1
+STEP_HEIGHT_DEFAULT = Vector3(0, 0.35, 0)
+STEP_MAX_SLOPE_DEGREE = 1.0
+
+[node name="CogtoTestCurrency" parent="." instance=ExtResource("5_7ih0v")]
+
+[node name="StrengthAttribute" type="Node" parent="."]
+script = ExtResource("6_ykqeg")
+attribute_name = "strength"
+attribute_display_name = "ATTR_strength"
+attribute_color = Color(0.101434, 0.296537, 0.385427, 1)
+attribute_icon = ExtResource("7_dcbkw")
+value_max = 10.0
+value_start = 4.0
+attribute_visibility = 2
+metadata/_custom_type_script = "uid://b6l8lsrktfd4b"
+
+[node name="LightMeterAttribute" parent="." instance=ExtResource("8_jto75")]
+
+[node name="SanityAttribute" parent="." instance=ExtResource("9_w4jr0")]
+decay_in_darkness = false
+
+[node name="StaminaAttribute" parent="." instance=ExtResource("10_doo25")]
+
+[node name="HealthAttribute" parent="." instance=ExtResource("11_wb1pd")]
+
+[node name="StandingCollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+shape = SubResource("BoxShape3D_8vem4")
+
+[node name="CrouchingCollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45, 0)
+shape = SubResource("BoxShape3D_ut3wm")
+disabled = true
+
+[node name="StaircheckRayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+target_position = Vector3(0, -0.5, 0)
+
+[node name="CrouchRayCast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+target_position = Vector3(0, 1.6, 0)
+collision_mask = 3
+
+[node name="Body" type="Node3D" parent="."]
+
+[node name="Neck" type="Node3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+
+[node name="Head" type="Node3D" parent="Body/Neck"]
+
+[node name="Eyes" type="Node3D" parent="Body/Neck/Head"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Body/Neck/Head/Eyes"]
+reset_on_save = false
+root_node = NodePath("../..")
+libraries = {
+&"": ExtResource("12_75o7g")
+}
+
+[node name="Camera" type="Camera3D" parent="Body/Neck/Head/Eyes"]
+
+[node name="InteractionRaycast" parent="Body/Neck/Head/Eyes/Camera" instance=ExtResource("13_tpgek")]
+
+[node name="CarryablePosition" type="Marker3D" parent="Body/Neck/Head/Eyes/Camera"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.8)
+
+[node name="ItemDropShapeCast" type="ShapeCast3D" parent="Body/Neck/Head/Eyes/Camera"]
+shape = SubResource("BoxShape3D_bpb0d")
+target_position = Vector3(0, 0, -2)
+collision_mask = 3
+debug_shape_custom_color = Color(1, 0.368977, 0.687569, 1)
+script = ExtResource("14_2o4ki")
+
+[node name="Wieldables" type="Node3D" parent="Body/Neck/Head"]
+unique_name_in_owner = true
+script = ExtResource("15_0uj75")
+
+[node name="SlidingTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="FootstepPlayer" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.488, 0)
+stream = SubResource("AudioStreamRandomizer_af0lu")
+volume_db = -38.0
+max_polyphony = 8
+bus = &"SFX"
+script = ExtResource("21_074dc")
+generic_fallback_footstep_profile = ExtResource("22_yraph")
+footstep_material_library = ExtResource("23_i7pw3")
+generic_fallback_landing_profile = ExtResource("22_yraph")
+landing_material_library = ExtResource("23_i7pw3")
+
+[node name="JumpCooldownTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="PlayerInteractionComponent" parent="." node_paths=PackedStringArray("interaction_raycast", "carryable_position", "stamina_attribute", "wieldable_container") instance=ExtResource("24_v3rjj")]
+interaction_raycast = NodePath("../Body/Neck/Head/Eyes/Camera/InteractionRaycast")
+carryable_position = NodePath("../Body/Neck/Head/Eyes/Camera/CarryablePosition")
+stamina_attribute = NodePath("../StaminaAttribute")
+wieldable_container = NodePath("../Body/Neck/Head/Wieldables")
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("25_m6iwr")
+
+[node name="Panel" type="Panel" parent="GUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bpb0d")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="GUI/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Player_HUD" parent="GUI/Panel/AspectRatioContainer" node_paths=PackedStringArray("player") instance=ExtResource("26_v2w4a")]
+layout_mode = 2
+player = NodePath("../../../..")
+item_drop_distance_offset = 0.0
+
+[node name="PauseMenu" parent="GUI/Panel/AspectRatioContainer" instance=ExtResource("27_l6bt8")]
+layout_mode = 2
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="AutoPickUpZone" parent="." node_paths=PackedStringArray("_player_interaction_component") instance=ExtResource("28_ddyk2")]
+auto_pick_up_items = Array[ExtResource("29_jkh8t")]([ExtResource("30_e4a2l"), ExtResource("31_w0o55")])
+_player_interaction_component = NodePath("../PlayerInteractionComponent")
+
+[node name="HealthAutoConsume" parent="." instance=ExtResource("32_fle5a")]
+
+[node name="StaminaAutoConsume" parent="." instance=ExtResource("33_my4uh")]
+
+[connection signal="mouse_movement" from="." to="Body/Neck/Head/Wieldables" method="sway"]
+[connection signal="player_state_loaded" from="." to="." method="_on_player_state_loaded"]
+[connection signal="animation_finished" from="Body/Neck/Head/Eyes/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="interactable_seen" from="Body/Neck/Head/Eyes/Camera/InteractionRaycast" to="PlayerInteractionComponent" method="_on_interaction_raycast_interactable_seen"]
+[connection signal="interactable_unseen" from="Body/Neck/Head/Eyes/Camera/InteractionRaycast" to="PlayerInteractionComponent" method="_on_interaction_raycast_interactable_unseen"]
+[connection signal="timeout" from="SlidingTimer" to="." method="_on_sliding_timer_timeout"]

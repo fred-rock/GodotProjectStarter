@@ -41,3 +41,5 @@ Create a map
 ## Credits
 Sounds effects by Zapsplat
 'WRAD TEXTURES' by Erik Engström: https://wriks.itch.io/wrad-textures
+PublicDomainPictures.net
+pngimg.com

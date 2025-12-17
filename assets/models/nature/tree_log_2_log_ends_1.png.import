@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df3mi8wrapnr6"
-path.s3tc="res://.godot/imported/Dirt_05-128x128.png-de0bacb4368a98e046007a580a4b93e1.s3tc.ctex"
+uid="uid://bacc58cj23xsj"
+path.s3tc="res://.godot/imported/tree_log_2_log_ends_1.png-0e670bacfb1b30c7a48d581bcc5eecc8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "f066078133f763f8d1e8b5089f659024"
+}
 
 [deps]
 
-source_file="res://trenchbroom/textures/SBS/Tiny Texture Pack 2/128x128/Dirt/Dirt_05-128x128.png"
-dest_files=["res://.godot/imported/Dirt_05-128x128.png-de0bacb4368a98e046007a580a4b93e1.s3tc.ctex"]
+source_file="res://assets/models/nature/tree_log_2_log_ends_1.png"
+dest_files=["res://.godot/imported/tree_log_2_log_ends_1.png-0e670bacfb1b30c7a48d581bcc5eecc8.s3tc.ctex"]
 
 [params]
 
