@@ -1,25 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://yaqpx0ynrakh"]
+[gd_scene load_steps=6 format=3 uid="uid://yaqpx0ynrakh"]
 
-[ext_resource type="Script" uid="uid://dmeh01c5ccjqc" path="res://addons/cogito/CogitoObjects/cogito_object.gd" id="1_55oai"]
-[ext_resource type="PackedScene" uid="uid://b0acotuyh80s7" path="res://assets/models/nature/tree_log_2.glb" id="1_jjsgo"]
-[ext_resource type="Script" uid="uid://b0a3vpjf8hylo" path="res://addons/cogito/Components/Interactions/PickupComponent.gd" id="3_cpo56"]
+[ext_resource type="Script" uid="uid://dmeh01c5ccjqc" path="res://addons/cogito/CogitoObjects/cogito_object.gd" id="1_cpo56"]
+[ext_resource type="PackedScene" uid="uid://b0acotuyh80s7" path="res://assets/models/nature/tree_log_2.glb" id="2_r0ucs"]
+[ext_resource type="Script" uid="uid://b0a3vpjf8hylo" path="res://addons/cogito/Components/Interactions/PickupComponent.gd" id="3_rtunv"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_jjsgo"]
 height = 1.53442
 radius = 0.167969
 
-[node name="PickupWood" type="Node3D"]
-script = ExtResource("1_55oai")
+[sub_resource type="BoxShape3D" id="BoxShape3D_cpo56"]
+size = Vector3(0.278809, 0.11084, 0.088623)
+
+[node name="PickupWood" type="RigidBody3D"]
+mass = 3.0
+script = ExtResource("1_cpo56")
 cogito_name = "PickupWood"
 
-[node name="tree_log_22" parent="." instance=ExtResource("1_jjsgo")]
+[node name="LogMesh" parent="." instance=ExtResource("2_r0ucs")]
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
+[node name="PickupComponent" type="Node3D" parent="."]
+script = ExtResource("3_rtunv")
+input_map_action = "interact"
+interaction_text = "Add to inventory"
+metadata/_custom_type_script = "uid://b0a3vpjf8hylo"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="LogCollisionShape" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.0135498, 0.162674, 0.0179799)
 shape = SubResource("CylinderShape3D_jjsgo")
 
-[node name="PickupComponent" type="Node3D" parent="."]
-script = ExtResource("3_cpo56")
-metadata/_custom_type_script = "uid://b0a3vpjf8hylo"
+[node name="BranchCollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.136103, -0.983988, -0.115081, 0.751389, -0.178236, 0.635332, -0.645671, 2.63616e-08, 0.763616, 0.584236, 0.373492, -0.106916)
+shape = SubResource("BoxShape3D_cpo56")

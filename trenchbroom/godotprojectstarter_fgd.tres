@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://drlmgulwbjwqu" path="res://addons/func_godot/src/fgd/func_godot_fgd_file.gd" id="1_e4ntg"]
 [ext_resource type="Resource" uid="uid://crgpdahjaj" path="res://addons/func_godot/fgd/func_godot_fgd.tres" id="1_erd4a"]
-[ext_resource type="Resource" uid="uid://d1mfxdbf1yuxa" path="res://trenchbroom/fgd/model_point/func_destructable_tree.tres" id="2_vlbb6"]
+[ext_resource type="Resource" uid="uid://d1mfxdbf1yuxa" path="res://trenchbroom/fgd/model_point/func_harvestable_tree.tres" id="2_vlbb6"]
 
 [resource]
 script = ExtResource("1_e4ntg")

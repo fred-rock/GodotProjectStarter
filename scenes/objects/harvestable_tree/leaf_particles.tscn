@@ -21,8 +21,9 @@ size = Vector2(0.15, 0.15)
 
 [node name="LeafParticles" type="GPUParticles3D" node_paths=PackedStringArray("particles")]
 emitting = false
-amount = 16
+amount = 32
 one_shot = true
+speed_scale = 2.5
 process_material = SubResource("ParticleProcessMaterial_jrylt")
 draw_pass_1 = SubResource("QuadMesh_s4eor")
 script = ExtResource("2_6qdee")

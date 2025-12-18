@@ -1,16 +1,18 @@
-[gd_resource type="Resource" script_class="InventoryItemPD" load_steps=2 format=3 uid="uid://cavomd66otpnt"]
+[gd_resource type="Resource" script_class="InventoryItemPD" load_steps=3 format=3 uid="uid://cavomd66otpnt"]
 
 [ext_resource type="Script" uid="uid://dog0pawpwd55d" path="res://addons/cogito/InventoryPD/CustomResources/InventoryItemPD.gd" id="1_nmid8"]
+[ext_resource type="Texture2D" uid="uid://decwujsyhj0qy" path="res://addons/func_godot/icon32.png" id="1_w3n26"]
 
 [resource]
 script = ExtResource("1_nmid8")
 name = "Wood"
 description = "Harvested from a tree"
+icon = ExtResource("1_w3n26")
 is_stackable = true
 is_droppable = true
 is_unique = false
 stack_size = 5
-drop_scene = null
+drop_scene = "uid://yaqpx0ynrakh"
 item_drop_size = 0.5
 hint_text_on_use = ""
 item_size = Vector2(1, 1)

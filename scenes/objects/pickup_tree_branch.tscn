@@ -8,12 +8,11 @@ size = Vector3(2.54895, 0.370239, 0.210999)
 
 [node name="PickupTreeBranch" type="RigidBody3D"]
 collision_layer = 3
-mass = 25.0
-continuous_cd = true
+mass = 3.0
 script = ExtResource("1_5clsb")
 cogito_name = "TreeBranch"
 
-[node name="tree_branch2" parent="." instance=ExtResource("2_6mpve")]
+[node name="Mesh" parent="." instance=ExtResource("2_6mpve")]
 transform = Transform3D(-0.0112394, -0.999861, 0.0123566, -0.677356, -0.00147731, -0.735654, 0.735569, -0.0166381, -0.677245, 1.1314, 0.0344923, -0.00268555)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

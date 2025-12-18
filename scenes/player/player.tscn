@@ -1,7 +1,7 @@
 [gd_scene load_steps=39 format=3 uid="uid://j7yysy6bkd4g"]
 
 [ext_resource type="Script" uid="uid://dyitnpyhwiqx7" path="res://addons/cogito/CogitoObjects/cogito_player.gd" id="1_swb31"]
-[ext_resource type="Resource" uid="uid://ll11y3yjbqt" path="res://addons/cogito/InventoryPD/Inventories/PlayerInventory_FIXED.tres" id="2_75b6e"]
+[ext_resource type="Resource" uid="uid://doaedbd8ad7bg" path="res://scenes/player/player_inventory.tres" id="2_5mf0n"]
 [ext_resource type="AudioStream" uid="uid://ba8gpptnnapyh" path="res://addons/cogito/Assets/Audio/Kenney/cloth2.ogg" id="3_r1ew1"]
 [ext_resource type="AudioStream" uid="uid://b7wmxwvtbpfu1" path="res://addons/cogito/Assets/Audio/537275__laughingfish78__dirt-sliding.ogg" id="4_ryqok"]
 [ext_resource type="PackedScene" uid="uid://n1doui0jpn1v" path="res://addons/cogito/InventoryPD/CustomResources/CogtoTestCurrency.tscn" id="5_7ih0v"]
@@ -60,7 +60,7 @@ pause_menu = NodePath("GUI/Panel/AspectRatioContainer/PauseMenu")
 player_hud = NodePath("GUI/Panel/AspectRatioContainer/Player_HUD")
 item_drop_shapecast = NodePath("Body/Neck/Head/Eyes/Camera/ItemDropShapeCast")
 fall_damage = 10
-inventory_data = ExtResource("2_75b6e")
+inventory_data = ExtResource("2_5mf0n")
 jump_sound = ExtResource("3_r1ew1")
 slide_sound = ExtResource("4_ryqok")
 WALKING_SPEED = 3.0
