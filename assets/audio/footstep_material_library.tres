@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="FootstepMaterialLibrary" load_steps=3 format=3 uid="uid://bhlx2k2eywlvs"]
+
+[ext_resource type="Script" uid="uid://dnlc5ss1iy2e7" path="res://addons/cogito/DynamicFootstepSystem/Scripts/footstep_material_profile.gd" id="1_d1wi0"]
+[ext_resource type="Script" uid="uid://c37vmrysh4i7" path="res://addons/cogito/DynamicFootstepSystem/Scripts/footstep_material_library.gd" id="2_11a1v"]
+
+[resource]
+script = ExtResource("2_11a1v")
+footstep_material_library = Array[ExtResource("1_d1wi0")]([])
+metadata/_custom_type_script = "uid://c37vmrysh4i7"

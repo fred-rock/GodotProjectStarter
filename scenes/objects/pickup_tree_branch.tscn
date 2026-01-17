@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cf5isot2hv2v0"]
 
 [ext_resource type="Script" uid="uid://dmeh01c5ccjqc" path="res://addons/cogito/CogitoObjects/cogito_object.gd" id="1_5clsb"]
-[ext_resource type="PackedScene" uid="uid://cjinu41mhympb" path="res://assets/models/nature/tree_branch.glb" id="2_6mpve"]
+[ext_resource type="PackedScene" uid="uid://cjinu41mhympb" path="res://assets/models/nature/trees/tree_branch.glb" id="2_6mpve"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5clsb"]
 size = Vector3(2.54895, 0.370239, 0.210999)

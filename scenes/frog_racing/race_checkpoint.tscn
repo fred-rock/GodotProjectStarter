@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqhm271mdvfoc"]
+
+[ext_resource type="Script" uid="uid://bd5rvoan4x4an" path="res://scenes/frog_racing/race_checkpoint.gd" id="1_ovcfl"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ns8va"]
+top_radius = 0.25
+bottom_radius = 0.25
+height = 5.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ns8va"]
+radius = 20.0
+
+[node name="RaceCheckpoint" type="MeshInstance3D" groups=["checkpoints"]]
+mesh = SubResource("CylinderMesh_ns8va")
+script = ExtResource("1_ovcfl")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("SphereShape3D_ns8va")
+debug_color = Color(0.70052, 0.892689, 1, 1)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, 11)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]

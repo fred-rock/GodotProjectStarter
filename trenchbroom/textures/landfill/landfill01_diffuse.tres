@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c2n162uard8yc"]
+
+[ext_resource type="Texture2D" uid="uid://bam0mrv444xdo" path="res://trenchbroom/textures/landfill/landfill01_diffuse.png" id="1_45pgi"]
+
+[resource]
+albedo_texture = ExtResource("1_45pgi")
+metallic_specular = 0.0
+texture_filter = 2

@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://cpod8pf3vovgk"
+path="res://.godot/imported/landfill.map-b85400447ba0f9e77b969790bd9d0a0e.tres"
+
+[deps]
+
+source_file="res://trenchbroom/maps/landfill.map"
+dest_files=["res://.godot/imported/landfill.map-b85400447ba0f9e77b969790bd9d0a0e.tres"]
+
+[params]
+

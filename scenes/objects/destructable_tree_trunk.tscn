@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dmeh01c5ccjqc" path="res://addons/cogito/CogitoObjects/cogito_object.gd" id="1_0s82q"]
 [ext_resource type="PackedScene" uid="uid://cqgg1nng0vvbh" path="res://addons/cogito/Components/Attributes/HealthAttribute.tscn" id="2_sdglw"]
-[ext_resource type="AudioStream" uid="uid://bbq65ishd0grk" path="res://assets/audio/sfx/zapsplat_industrial_tool_axe_chop_wood_forest_echo_single_006_102077.mp3" id="3_emyig"]
+[ext_resource type="AudioStream" uid="uid://bbq65ishd0grk" path="res://assets/audio/sfx/tree/zapsplat_industrial_tool_axe_chop_wood_forest_echo_single_006_102077.mp3" id="3_emyig"]
 [ext_resource type="PackedScene" uid="uid://cf5isot2hv2v0" path="res://scenes/objects/pickup_tree_branch.tscn" id="4_6vi0e"]
 [ext_resource type="PackedScene" uid="uid://k28yrbg3k3pw" path="res://addons/cogito/Components/HitboxComponent.tscn" id="5_2j2w3"]
-[ext_resource type="PackedScene" uid="uid://gar66bkknxqy" path="res://assets/models/nature/tree_6.glb" id="6_g8ljb"]
+[ext_resource type="PackedScene" uid="uid://gar66bkknxqy" path="res://assets/models/nature/trees/tree_6.glb" id="6_g8ljb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t5rbe"]
-size = Vector3(1, 3.27448, 1)
+size = Vector3(1, 1.5, 2)
 
 [node name="DestructableTreeTrunk" type="RigidBody3D"]
 mass = 150.0
@@ -18,7 +18,7 @@ script = ExtResource("1_0s82q")
 cogito_name = "tree_trunk"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.499998, 0.000646089, -0.00116953, -0.00054512, 0.498217, 0.0421842, 0.00121987, -0.0421828, 0.498216, -0.015537, 0.981187, -0.0422463)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.63724, -1)
 shape = SubResource("BoxShape3D_t5rbe")
 
 [node name="HealthAttribute" parent="." instance=ExtResource("2_sdglw")]
@@ -33,3 +33,4 @@ health_attribute = NodePath("../HealthAttribute")
 applied_force_multipler = 5
 
 [node name="Mesh" parent="." instance=ExtResource("6_g8ljb")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -2)

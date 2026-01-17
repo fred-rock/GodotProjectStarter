@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxs8kkiopfn64"]
+
+[ext_resource type="PackedScene" uid="uid://drgyopw5cyqtc" path="res://assets/models/nature/animals/Frog.glb" id="1_mqod6"]
+[ext_resource type="Script" uid="uid://brx66inowhgmj" path="res://scenes/frog_racing/frog.gd" id="2_qyo2l"]
+
+[node name="Frog" instance=ExtResource("1_mqod6")]
+script = ExtResource("2_qyo2l")
+
+[node name="Skeleton3D" parent="RootNode/FrogArmature" index="0"]
+bones/1/position = Vector3(2.24905e-05, 0.0178289, -7.25789e-05)
+bones/2/rotation = Quaternion(0.73552, 0.676239, -0.0364193, -0.019604)
+bones/3/rotation = Quaternion(0.179389, 0.230393, 0.453333, 0.842157)
+bones/4/rotation = Quaternion(-0.73958, -0.145149, 0.186721, 0.630149)
+bones/9/rotation = Quaternion(-0.0114841, -0.00303923, -0.0369794, 0.999245)
+bones/10/rotation = Quaternion(-0.192601, -0.254115, 0.0508348, 0.946439)
+bones/15/rotation = Quaternion(-0.00429218, 0.00477541, -0.682617, 0.730748)
+bones/16/rotation = Quaternion(0.13535, 0.888738, 0.437739, 0.0144687)
+bones/17/rotation = Quaternion(0.682501, 0.0655813, 0.651935, 0.323839)
+bones/18/rotation = Quaternion(0.980257, 0.126237, 0.0473792, -0.144623)
+bones/20/rotation = Quaternion(-0.0384654, -0.0127153, 0.714813, 0.698141)
+bones/21/rotation = Quaternion(-0.507189, 0.793526, -0.137403, 0.306913)
+bones/22/rotation = Quaternion(-0.749438, 0.209168, -0.110374, 0.618393)
+bones/24/rotation = Quaternion(-0.00430048, -0.00467474, 0.682564, 0.730798)
+bones/25/rotation = Quaternion(0.457696, -0.208908, 0.0212302, 0.863957)
+bones/26/rotation = Quaternion(0.790125, -0.329275, 0.516365, 0.0254369)
+bones/27/rotation = Quaternion(0.981068, -0.122639, -0.0246649, -0.147839)
+bones/33/position = Vector3(0.0105859, 2.8756e-05, 0.00848057)
+bones/37/position = Vector3(-0.0106861, 2.87557e-05, 0.00848057)
