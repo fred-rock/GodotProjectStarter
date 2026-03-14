@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://l3el5a2wugd5"]
+
+[ext_resource type="Script" uid="uid://bi4ed4s15np0s" path="res://addons/cogito/Components/Attributes/cogito_health_attribute.gd" id="1_stjwr"]
+[ext_resource type="Script" uid="uid://bxbedi8cjh8xx" path="res://assets/scripts/enemy/simple_enemy.gd" id="1_xmblk"]
+[ext_resource type="Script" uid="uid://couw105c3bde4" path="res://addons/godot_state_charts/state_chart.gd" id="2_h45w0"]
+[ext_resource type="Script" uid="uid://jk2jm1g6q853" path="res://addons/godot_state_charts/compound_state.gd" id="3_xmblk"]
+[ext_resource type="Script" uid="uid://cytafq8i1y8qm" path="res://addons/godot_state_charts/atomic_state.gd" id="4_ckuuk"]
+[ext_resource type="Script" uid="uid://cf1nsco3w0mf6" path="res://addons/godot_state_charts/transition.gd" id="5_du441"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rjeqh"]
+albedo_color = Color(0.767025, 2.52686e-06, 9.62615e-07, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rjeqh"]
+material = SubResource("StandardMaterial3D_rjeqh")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gsiem"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xmblk"]
+radius = 5.0
+
+[node name="SimpleEnemy" type="CharacterBody3D"]
+script = ExtResource("1_xmblk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_rjeqh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_gsiem")
+
+[node name="CogitoHealthAttribute" type="Node" parent="."]
+script = ExtResource("1_stjwr")
+metadata/_custom_type_script = "uid://bi4ed4s15np0s"
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+target_desired_distance = 1.1
+avoidance_enabled = true
+debug_enabled = true
+
+[node name="StateChart" type="Node" parent="."]
+script = ExtResource("2_h45w0")
+metadata/_custom_type_script = "uid://couw105c3bde4"
+
+[node name="Root" type="Node" parent="StateChart"]
+script = ExtResource("3_xmblk")
+initial_state = NodePath("IdleState")
+
+[node name="IdleState" type="Node" parent="StateChart/Root"]
+script = ExtResource("4_ckuuk")
+
+[node name="FollowState" type="Node" parent="StateChart/Root"]
+script = ExtResource("4_ckuuk")
+
+[node name="ToIdle" type="Node" parent="StateChart/Root"]
+script = ExtResource("5_du441")
+to = NodePath("../IdleState")
+event = &"toIdle"
+delay_in_seconds = "0.0"
+
+[node name="ToFollow" type="Node" parent="StateChart/Root"]
+script = ExtResource("5_du441")
+to = NodePath("../FollowState")
+event = &"toFollow"
+delay_in_seconds = "0.0"
+
+[node name="DetectionArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea"]
+shape = SubResource("SphereShape3D_xmblk")
+
+[connection signal="state_physics_processing" from="StateChart/Root/FollowState" to="." method="_on_follow_state_physics_processing"]
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

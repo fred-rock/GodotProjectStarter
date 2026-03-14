@@ -4,8 +4,14 @@
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_6lfjr"]
 [ext_resource type="Resource" uid="uid://cmt8gql2bc8a7" path="res://trenchbroom/godotprojectstarter_settings.tres" id="2_qd0o6"]
 [ext_resource type="PackedScene" uid="uid://kicjwmh02uwf" path="res://addons/cogito/PackedScenes/cogito_player.tscn" id="4_pvbb1"]
-[ext_resource type="PackedScene" uid="uid://dopt6hi2ugpkq" path="res://scenes/objects/harvestable_tree/harvestable_tree.tscn" id="8_rl8gb"]
-[ext_resource type="PackedScene" uid="uid://cgce75ts2twkp" path="res://addons/cogito/PackedScenes/Pickups/pickup_pickaxe.tscn" id="10_3sjje"]
+[ext_resource type="PackedScene" uid="uid://l3el5a2wugd5" path="res://scenes/enemy/simple_enemy.tscn" id="7_av42w"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_7kxsd"]
+vertices = PackedVector3Array(-12.75, 0.499878, -9.75, -12.75, 0.499878, 10, 11.5, 0.499878, 10, 11.5, 0.499878, -9.75)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+geometry_source_geometry_mode = 1
+geometry_source_group_name = &"geometry"
+agent_height = 2.0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i5e4g"]
 load_path = "res://.godot/imported/proto_03.png-a6ece3ba2200ceae53d86e936c016713.s3tc.ctex"
@@ -78,7 +84,10 @@ sky = SubResource("Sky_ssd6y")
 [node name="prototype_level" type="Node3D"]
 script = ExtResource("1_0bul0")
 
-[node name="FuncGodotMap" type="Node3D" parent="."]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_7kxsd")
+
+[node name="FuncGodotMap" type="Node3D" parent="." groups=["geometry"]]
 script = ExtResource("1_6lfjr")
 local_map_file = "uid://d2483woy7nilc"
 map_settings = ExtResource("2_qd0o6")
@@ -106,6 +115,8 @@ shape = SubResource("ConvexPolygonShape3D_r7pgf")
 shape = SubResource("ConvexPolygonShape3D_m3w54")
 
 [node name="my_player" parent="." instance=ExtResource("4_pvbb1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.8, -9)
+collision_layer = 4
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ssd6y")
@@ -116,10 +127,7 @@ transform = Transform3D(-0.816581, 0, 0.577231, 0, 1, 0, -0.577231, 0, -0.816581
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(-2.22522e-08, 0.860724, -0.509071, 3.76235e-08, 0.509071, 0.860724, 1, 0, -4.37114e-08, 0, 0, 0)
 
-[node name="Pickup_Pickaxe" parent="." instance=ExtResource("10_3sjje")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.55966)
-
-[node name="DestructableTree" parent="." instance=ExtResource("8_rl8gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4833, 0, -0.456816)
+[node name="SimpleEnemy" parent="." instance=ExtResource("7_av42w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 9)
 
 [editable path="my_player"]

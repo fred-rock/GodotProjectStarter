@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbwip08o32prh"]
-
-[ext_resource type="PackedScene" uid="uid://yaqpx0ynrakh" path="res://scenes/objects/harvestable_tree/pickup_wood.tscn" id="1_fp1j2"]
-
-[node name="HarvestableTreeDrop" type="Node3D"]
-
-[node name="PickupWood" parent="." instance=ExtResource("1_fp1j2")]
-transform = Transform3D(0.566276, 0.824215, 0, -0.824215, 0.566276, 0, 0, 0, 1, 0, 2, 0)

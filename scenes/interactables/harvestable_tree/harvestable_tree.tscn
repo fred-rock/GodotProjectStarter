@@ -1,0 +1,53 @@
+[gd_scene load_steps=12 format=3 uid="uid://dopt6hi2ugpkq"]
+
+[ext_resource type="Script" uid="uid://dmeh01c5ccjqc" path="res://addons/cogito/CogitoObjects/cogito_object.gd" id="1_c0vgj"]
+[ext_resource type="PackedScene" uid="uid://cqgg1nng0vvbh" path="res://addons/cogito/Components/Attributes/HealthAttribute.tscn" id="3_fype1"]
+[ext_resource type="AudioStream" uid="uid://bbq65ishd0grk" path="res://assets/audio/sfx/tree/zapsplat_industrial_tool_axe_chop_wood_forest_echo_single_006_102077.mp3" id="4_5ippr"]
+[ext_resource type="PackedScene" uid="uid://k28yrbg3k3pw" path="res://addons/cogito/Components/HitboxComponent.tscn" id="4_dgjuq"]
+[ext_resource type="AudioStream" uid="uid://cg2s2m470q1ba" path="res://assets/audio/sfx/tree/zapsplat_impacts_wood_rotten_tree_trunk_hit_break_crumple_002_102685.mp3" id="7_asrco"]
+[ext_resource type="PackedScene" uid="uid://duwfomtsp8gjt" path="res://assets/models/nature/trees/tree_stump_1.glb" id="7_pn7b4"]
+[ext_resource type="PackedScene" uid="uid://gar66bkknxqy" path="res://assets/models/nature/trees/tree_6.glb" id="8_0cjnf"]
+[ext_resource type="PackedScene" uid="uid://co27sr502oe44" path="res://scenes/interactables/harvestable_tree/leaf_particles.tscn" id="8_2alrj"]
+[ext_resource type="PackedScene" uid="uid://dbwip08o32prh" path="res://scenes/interactables/harvestable_tree/harvestable_tree_drop.tscn" id="8_va74o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pn7b4"]
+size = Vector3(1.01017, 4, 1.02412)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_va74o"]
+height = 0.570793
+
+[node name="HarvestableTree" type="RigidBody3D"]
+collision_layer = 3
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_c0vgj")
+cogito_name = "HarvestableTree"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00844108, 2.53177, 0.0126404)
+shape = SubResource("BoxShape3D_pn7b4")
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_attribute") instance=ExtResource("4_dgjuq")]
+health_attribute = NodePath("../HealthAttribute")
+spawn_at_global_collision = ExtResource("8_2alrj")
+apply_force_on_hit = false
+
+[node name="HealthAttribute" parent="." instance=ExtResource("3_fype1")]
+sound_on_hit = ExtResource("4_5ippr")
+sound_on_death = ExtResource("7_asrco")
+destroy_on_death = Array[NodePath]([NodePath("../TreeMesh"), NodePath("../CollisionShape3D")])
+spawn_on_death = Array[PackedScene]([ExtResource("8_va74o")])
+value_max = 50.0
+value_start = 10.0
+
+[node name="TreeMesh" parent="." instance=ExtResource("8_0cjnf")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="StumpMesh" parent="." instance=ExtResource("7_pn7b4")]
+
+[node name="StumpStaticBody" type="StaticBody3D" parent="."]
+top_level = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StumpStaticBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.285397, 0)
+shape = SubResource("CylinderShape3D_va74o")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkcatdslf4skg"]
+
+[ext_resource type="Script" uid="uid://bb6o8b80ywn8n" path="res://scenes/vehicles/ai_racer.gd" id="1_8upc2"]
+
+[node name="AiRacer" type="Node3D"]
+script = ExtResource("1_8upc2")

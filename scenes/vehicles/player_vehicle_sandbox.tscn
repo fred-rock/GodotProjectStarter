@@ -1,0 +1,94 @@
+[gd_scene load_steps=14 format=3 uid="uid://cliskrc0yfr41"]
+
+[ext_resource type="Script" uid="uid://gnnt4kxw17l1" path="res://scenes/vehicles/player_vehicle.gd" id="1_w436m"]
+[ext_resource type="PackedScene" uid="uid://dgnjo2icha0pv" path="res://scenes/vehicles/vehicle.tscn" id="2_k5dev"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_i02e8"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_dociu"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_dociu"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0vfpm"]
+size = Vector2(100, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dociu"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0vfpm"]
+points = PackedVector3Array(50.7837, 0.793495, 50.7837, -50.7837, -0.793495, -50.7837, -50.7837, 0.793495, -50.7837, 50.7837, -0.793495, -50.7837, -50.7837, -0.793495, 50.7837, -50.7837, 0.793495, 50.7837, 50.7837, 0.793495, -50.7837, 50.7837, -0.793495, 50.7837)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0vfpm"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_vc4n0"]
+sky_material = SubResource("ProceduralSkyMaterial_0vfpm")
+
+[sub_resource type="Environment" id="Environment_kr3ub"]
+background_mode = 2
+sky = SubResource("Sky_vc4n0")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="Resource" id="Resource_7pvda"]
+script = ExtResource("4_dociu")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_dociu"]
+
+[node name="PlayerVehicleSandbox" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_0vfpm")
+surface_material_override/0 = SubResource("StandardMaterial3D_dociu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_0vfpm")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kr3ub")
+
+[node name="PlayerVehicle" type="Node3D" parent="." node_paths=PackedStringArray("vehicle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+script = ExtResource("1_w436m")
+vehicle = NodePath("Vehicle")
+
+[node name="Vehicle" parent="PlayerVehicle" instance=ExtResource("2_k5dev")]
+mass = 500.0
+
+[node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 9, -10)
+top_level = true
+script = ExtResource("3_i02e8")
+follow_mode = 2
+follow_target = NodePath("../PlayerVehicle/Vehicle")
+tween_resource = SubResource("Resource_7pvda")
+follow_offset = Vector3(0, 5, -10)
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+physics_interpolation_mode = 1
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 9, -10)
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("5_dociu")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.866025, 0.5, 0, -0.5, -0.866025, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3, 10)
+mesh = SubResource("BoxMesh_dociu")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, 4)
+mesh = SubResource("BoxMesh_dociu")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, 21)
+mesh = SubResource("BoxMesh_dociu")

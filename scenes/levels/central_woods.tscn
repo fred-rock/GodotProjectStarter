@@ -10,7 +10,7 @@
 [ext_resource type="Material" uid="uid://c8fbkrmtwus7j" path="res://trenchbroom/textures/SBS/Tiny Texture Pack 1/128x128/Wood/Wood_11-128x128.tres" id="8_bdhvw"]
 [ext_resource type="Material" uid="uid://lync0ccl1h6b" path="res://trenchbroom/textures/SBS/Tiny Texture Pack 1/128x128/Grass/Grass_20-128x128.tres" id="9_yy8wn"]
 [ext_resource type="Material" uid="uid://c385pn8sgoqqv" path="res://trenchbroom/textures/SBS/Horror Texture Pack/256x256/Stone/Horror_Stone_08-256x256.tres" id="10_ry3fa"]
-[ext_resource type="PackedScene" uid="uid://dopt6hi2ugpkq" path="res://scenes/objects/harvestable_tree/harvestable_tree.tscn" id="11_4mwbb"]
+[ext_resource type="PackedScene" uid="uid://dopt6hi2ugpkq" path="res://scenes/interactables/harvestable_tree/harvestable_tree.tscn" id="11_4mwbb"]
 [ext_resource type="Shader" uid="uid://cvd0x7lon1ur6" path="res://addons/sky_3d/shaders/SkyMaterial.gdshader" id="12_j7brb"]
 [ext_resource type="Texture2D" uid="uid://cfqk60lpl5ljv" path="res://addons/sky_3d/assets/resources/SNoise.tres" id="13_f35oc"]
 [ext_resource type="Texture2D" uid="uid://cecwdqjol0ckd" path="res://addons/sky_3d/assets/textures/noiseClouds.png" id="14_d2ds4"]
@@ -23,7 +23,7 @@
 [ext_resource type="Script" uid="uid://cjmkcj8hwm7ts" path="res://addons/sky_3d/src/TimeOfDay.gd" id="21_8oma6"]
 [ext_resource type="PackedScene" uid="uid://j7yysy6bkd4g" path="res://scenes/player/player.tscn" id="22_e2lh3"]
 [ext_resource type="PackedScene" uid="uid://cgce75ts2twkp" path="res://addons/cogito/PackedScenes/Pickups/pickup_pickaxe.tscn" id="23_6so5f"]
-[ext_resource type="PackedScene" uid="uid://yaqpx0ynrakh" path="res://scenes/objects/harvestable_tree/pickup_wood.tscn" id="24_7k46q"]
+[ext_resource type="PackedScene" uid="uid://yaqpx0ynrakh" path="res://scenes/interactables/harvestable_tree/pickup_wood.tscn" id="24_7k46q"]
 [ext_resource type="PackedScene" uid="uid://cwd3g16ep0idw" path="res://addons/cogito/PackedScenes/Pickups/pickup_flashlight.tscn" id="25_7okan"]
 [ext_resource type="PackedScene" uid="uid://bvnk8wuynympf" path="res://assets/models/nature/foliage/fern_1.glb" id="26_4whww"]
 [ext_resource type="PackedScene" uid="uid://k0dtvth4wn11" path="res://assets/models/nature/foliage/fern_2.glb" id="27_allaw"]
@@ -1146,8 +1146,8 @@ shader_parameter/cirrus_sky_tint_fade = 0.5
 shader_parameter/cirrus_intensity = 10.0
 shader_parameter/cirrus_size = 1.0
 shader_parameter/cirrus_uv = Vector2(0.16, 0.11)
-shader_parameter/cirrus_position1 = Vector2(0.118465, 0.118464)
-shader_parameter/cirrus_position2 = Vector2(0.118465, 0.118464)
+shader_parameter/cirrus_position1 = Vector2(0.069957, 0.069956)
+shader_parameter/cirrus_position2 = Vector2(0.069957, 0.069956)
 shader_parameter/cirrus_day_color = Color(0.824, 0.875, 1, 1)
 shader_parameter/cirrus_horizon_light_color = Color(0.98, 0.43, 0.15, 1)
 shader_parameter/cirrus_night_color = Color(0.09, 0.094, 0.129, 1)
@@ -1160,7 +1160,7 @@ shader_parameter/cumulus_noise_freq = 2.7
 shader_parameter/cumulus_sky_tint_fade = 0.0
 shader_parameter/cumulus_intensity = 0.6
 shader_parameter/cumulus_size = 0.5
-shader_parameter/cumulus_position = Vector2(0.592324, 0.592316)
+shader_parameter/cumulus_position = Vector2(0.349783, 0.349781)
 shader_parameter/cumulus_texture = ExtResource("14_d2ds4")
 shader_parameter/cumulus_day_color = Color(0.823529, 0.87451, 1, 1)
 shader_parameter/cumulus_horizon_light_color = Color(0.98, 0.43, 0.15, 1)

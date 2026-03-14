@@ -1,0 +1,131 @@
+[gd_scene load_steps=10 format=3 uid="uid://bhnvyfg2md50a"]
+
+[ext_resource type="Script" uid="uid://de7j2dq2xcvka" path="res://scenes/auto_race/auto_race_.gd" id="1_6kgw5"]
+[ext_resource type="Script" uid="uid://dkc8vwu68b3tc" path="res://scenes/auto_race/auto_race_position.gd" id="2_ao3kq"]
+
+[sub_resource type="Curve3D" id="Curve3D_wwac3"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -57, 0, -4, 0, 0, 0, 0, 0, 0, -31, 0, -56, 0, 0, 0, 0, 0, 0, 39, 0, -56, 0, 0, 0, 0, 0, 0, 61, 0, -3, 0, 0, 0, 0, 0, 0, 53.78, 0, 35.149, 0, 0, 0, 0, 0, 0, 23.903, 0, 52.045, 0, 0, 0, 0, 0, 0, 2.623, 0, 58.131, 0, 0, 0, 0, 0, 0, -10.871, 0, 42.716),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wehjt"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kl5ud"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wwac3"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ggure"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ao3kq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ggure"]
+size = Vector3(27, 2, 1)
+
+[node name="AutoRace" type="Path3D" node_paths=PackedStringArray("pos_1", "pos_2", "pos_3", "pos_4")]
+curve = SubResource("Curve3D_wwac3")
+script = ExtResource("1_6kgw5")
+pos_1 = NodePath("Pos_1")
+pos_2 = NodePath("Pos_2")
+pos_3 = NodePath("Pos_3")
+pos_4 = NodePath("Pos_4")
+
+[node name="Track" type="CSGPolygon3D" parent="."]
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 0.01
+path_simplify_angle = 0.0
+path_rotation = 1
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = true
+material = SubResource("StandardMaterial3D_wehjt")
+
+[node name="Pos_1" type="PathFollow3D" parent="."]
+transform = Transform3D(-0.894377, 0, 0.447189, 0, 0.999999, 0, -0.447189, 0, -0.894377, -51.6334, 0, -1.31672)
+h_offset = -6.0
+use_model_front = true
+script = ExtResource("2_ao3kq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pos_1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_kl5ud")
+surface_material_override/0 = SubResource("StandardMaterial3D_wwac3")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Pos_1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pos_1/RigidBody3D"]
+shape = SubResource("CapsuleShape3D_ggure")
+
+[node name="Pos_2" type="PathFollow3D" parent="."]
+transform = Transform3D(-0.894363, 0, 0.447181, 0, 0.999999, 0, -0.447181, 0, -0.894363, -54.3167, 0, -2.65836)
+h_offset = -3.0
+use_model_front = true
+script = ExtResource("2_ao3kq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pos_2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_kl5ud")
+surface_material_override/0 = SubResource("StandardMaterial3D_wwac3")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Pos_2"]
+transform = Transform3D(1, 0, -9.31323e-10, 0, 1, 0, 9.31323e-10, 0, 1, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pos_2/RigidBody3D"]
+shape = SubResource("CapsuleShape3D_ao3kq")
+
+[node name="Pos_3" type="PathFollow3D" parent="."]
+transform = Transform3D(-0.89436, 0, 0.44718, 0, 0.999999, 0, -0.44718, 0, -0.89436, -57.8944, 0, -4.44721)
+h_offset = 1.0
+use_model_front = true
+script = ExtResource("2_ao3kq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pos_3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_kl5ud")
+surface_material_override/0 = SubResource("StandardMaterial3D_wwac3")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Pos_3"]
+transform = Transform3D(1, 0, -9.31323e-10, 0, 1, 0, 9.31323e-10, 0, 1, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pos_3/RigidBody3D"]
+shape = SubResource("CapsuleShape3D_ao3kq")
+
+[node name="Pos_4" type="PathFollow3D" parent="."]
+transform = Transform3D(-0.894346, 0, 0.447173, 0, 0.999999, 0, -0.447173, 0, -0.894346, -61.4721, 0, -6.23607)
+h_offset = 5.0
+use_model_front = true
+script = ExtResource("2_ao3kq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pos_4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_kl5ud")
+surface_material_override/0 = SubResource("StandardMaterial3D_wwac3")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Pos_4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pos_4/RigidBody3D"]
+shape = SubResource("CapsuleShape3D_ao3kq")
+
+[node name="CountdownTimer" type="Timer" parent="."]
+
+[node name="FinishLine" type="Area3D" parent="."]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 46.9659, 0, 38.2588)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FinishLine"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_ggure")
+debug_color = Color(0.237492, 0.000488431, 0.599178, 1)
+
+[connection signal="timeout" from="CountdownTimer" to="." method="start_countdown"]
+[connection signal="body_entered" from="FinishLine" to="." method="increment_lap"]
